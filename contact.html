@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SCSS Silicon</title>
+    <link rel="stylesheet" href="./scss/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body class="dark">
+    <div class="wrapper">
+    
+    <!--HEADER-->
+
+    <header>
+        <div class="container">
+            <div class="header-left">
+
+            <a href="index.html"><img src="..\images light version\mainlogo.svg" alt="logo silicon"></a>
+                
+            <nav class="navbar">
+                <a class="nav-link" href="#">Features</a>
+            </nav>
+        </div>
+        
+        <div class="header-right">
+                <div class="mode-toggle">
+                    <span class="label">Dark mode</span>
+                    <label for="darkmode-toggle" id="darkmode-switch" class="switch" aria-label ="darkmode switch">   <!--from w3schools-->
+                        <input id="darkmode-toggle" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <a class="btn-primary">
+                    <img class="icon-btn-primary" src="images light version\icon-singIn_button.svg" alt="icon person">
+                    <p>Sign in / up</p>
+                </a>
+
+                <a class="mobile-btn" aria-controls="main-menu" aria-expanded="false" aria-label="toggle navigation">
+                    <img class="icon-menu" src="images light version\Button - Toggle navigation.svg" alt="icon">                </button>     
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+    
+        <section class="contact">
+
+            <div class="container">
+
+                <div class="header">
+                    <h2>Send us a message</h2>
+                    <p>Fill in this form to contact us and someone in our team will get in touch with you soon.</p>
+                </div>
+
+                <form id="regForm" class="reg-form" novalidate>
+
+                <div class="userName">
+                    <div class="input-group">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" id="firstName" class="form-input" required>
+                        <p class="invalid-input">Error Msg</p>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" id="lastName" class="form-input" required>
+                        <p class="invalid-input"> Error Msg</p>
+                    </div>
+                </div>
+
+                <div class="userContact">
+                    <div class="input-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" required>
+                        <p class="invalid-input">Error Msg</p>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" id="phone" class="form-input">
+                    </div>
+                </div>
+
+                    <div class="input-group">
+                        <label for="userMessage" class="form-label">Message</label>
+                        <textarea name="userMessage" id="userMessage" class="form-input" cols="8" rows="10" required></textarea>
+                        <p class="invalid-input">Error Msg</p>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="checkbox" id="terms" class="form-check" required>
+                        <label for="terms" class="terms">I accept the terms and conditions</label>
+                        <p class="invalid-input">Error Msg</p>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-primary submitBtn">Submit</button>
+                </form>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <!--FOOTER-->
+<footer>   
+    <div class="container" >
+    <p class="copyright">© 2024 Silicon. All rights reserved.</p>
+    <p class="credit">Credit MadrasThemes</p>
+    </div> 
+</footer>
+</div>
+<script src="https://kit.fontawesome.com/771aedd07a.js" crossorigin="anonymous"></script>
+<script src="darkmode.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
