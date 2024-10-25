@@ -3,9 +3,11 @@ import React from 'react'
 function Footer() {
 
   return (
-    <footer class="container" >
-    <p class="copyright">© 2024 Silicon. All rights reserved.</p>
-    <p class="credit">Credit MadrasThemes</p>
+    <footer>
+      <div className="container" >
+        <p className="copyright">© 2024 Silicon. All rights reserved.</p>
+        <p className="credit">Credit MadrasThemes</p>
+      </div>
     </footer> 
   )
 }

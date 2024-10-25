@@ -14,19 +14,20 @@ function App() {
 
   return (
     <>
-      <Header/>
-      <main>
-      <Hero/>
-      <Brands/>
-      <Features/>
-      <Caroussel/>
-      <Transfers/>
-      <Testimonials/>
-      <Faqs/>
-      <Subscription/>
-      </main>
-      <Footer/>
-
+    <div className="wrapper">
+        <Header/>
+        <main>
+          <Hero/>
+          <Brands/>
+          <Features/>
+          <Caroussel/>
+          <Transfers/>
+          <Testimonials/>
+          <Faqs/>
+          <Subscription/>
+        </main>
+        <Footer/>
+      </div>
     </>
   )
 }

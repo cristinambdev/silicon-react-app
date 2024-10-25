@@ -1,5 +1,8 @@
 import React from 'react'
 import { Accordion } from './Accordion'
+import PhoneIcon from '../assets/images/icon_phone.svg'
+import ChatIcon from '../assets/images/icon_chat.svg'
+
 
 
 function Faqs() {
@@ -12,6 +15,9 @@ function Faqs() {
                 <h2>Any questions?<span> Check out the FAQs</span></h2>
                 <p>Still have unanswered questions and need to get in touch?</p>    
             </div>
+
+           
+
         <div className="faqs-accordion">
 
                  <div className="accordion-item open">
@@ -131,31 +137,33 @@ function Faqs() {
 </div> 
 </div>
 
-    </div>
+        </div>
     
-    <div className="contact-area">
+        <div className="contact-area">
                 
             <div className="contact-box">
-                <img src="src/images light version\icon_phone.svg" alt=""/>
+                <img src={PhoneIcon} alt=""/>
                 <p className="small-text">Still have questions?</p>
                 <a href="contact.html" className="contact-phone">
                     Contact us 
                     <i className="fa-solid fa-arrow-right"></i>
-                </a>
+                            </a>
             </div>
-
+    
             <div className="contact-box ">
-                <img src="src/images light version\icon_chat.svg" alt=""/>
+                <img src={ChatIcon}alt=""/>
                 <p className="small-text">Don't like phone calls?</p>
                 <a href="#" className="contact-chat">
-                    Contact us 
+                        Contact us 
                 <i className="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
 
-            <a href="contact.html" className="btn-primary">Contact us now</a>
 
-        </div>
+                    <a href="contact.html" className="btn-primary">Contact us now</a>
+               
+            </div>
+    
 </div>
 
  </section>

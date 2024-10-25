@@ -1,61 +1,74 @@
 import React from 'react'
+import Check from '../assets/images/bx-check-circle.svg'
+import PaymentsVektor from '../assets/images/vektor_creditcard.svg'
+import CashbackVektor from '../assets/images/vektor_cashback.svg'
+import TransfersImageBottom from '../assets/images/detailed_explanation_bottom_img.svg'
+import TransfersImageTop from '../assets/images/detailed_explanation_top_picture.svg'
+
+
 
 function Transfers() {
   return (
-    <section class="transfers">
-    <div class="container">
+    <section className="transfers">
+    <div className="container">
         
-        <div class="left-explanation">
+        <div className="left-explanation">
             
-            <div class="text-top">
+            <div className="text-top">
                 <h3>Make your money transfer simple and clear</h3>
                 <ul>
                     <li>
-                        <p><img class="check" src="src/images light version\bx-check-circle.svg" alt=""/> 
+                        <p><img className="check" src={Check} alt=""/> 
                             Banking transactions are free for you 
                         </p> 
                     </li>
                         
                     <li>
-                        <p><img class="check" src="src/images light version\bx-check-circle.svg" alt=""/> 
+                        <p><img className="check" src={Check} alt=""/> 
                             No monthly cash commission
                         </p>
                     </li>                        
                     <li>
-                        <p><img class="check" src="src/images light version\bx-check-circle.svg" alt=""/> 
+                        <p><img className="check" src={Check} alt=""/> 
                             Manage payments and transactions online
                         </p>
                     </li>                     
                 </ul>
-                <a class="btn-primary learn-more">
+                <a className="btn-primary learn-more">
                     Learn more 
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i className="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
-            <div class="contacts-img">
-                <img src="src/images light version\detailed_explanation_bottom_img.svg" alt=""/>
+            <div className="contacts-img">
+                <img src={TransfersImageBottom} alt=""/>
         </div>
            
     </div>
     
-    <div class="right-explanation">
-        <div class="september-forecast-img">
-            <img src="src/images light version\detailed_explanation_top_picture.svg" alt=""/>
+    <div className="right-explanation">
+        <div className="september-forecast-img">
+            <img src={TransfersImageTop} alt=""/>
         </div>
-        <div class="heading">
+        <div className="heading">
             <h3>Receive payment from international bank details</h3>
         </div>
         
-        <div class="content-left">
-            <img src="src/images light version\vektor_creditcard.svg" alt=""/>
+        <div className="content-left">
+
+        <div className="features-icon">
+            <img src={PaymentsVektor} alt="credit card icon"/>
+        </div>
+
             <p>Manage your payments online. Mollis congue egestas egestas fermentum fames.</p>
-            <a class="btn-primary learn-more">
+            <a className="btn-primary learn-more">
                 Learn more
-                <i class="fa-solid fa-arrow-right"></i>
+                <i className="fa-solid fa-arrow-right"></i>
             </a>
         </div>
-        <div class="content-right">
-            <img src="src/images light version\vektor_cashback.svg" alt=""/>
+        <div className="content-right">
+            <div className="features-icon">
+                <img src={CashbackVektor} alt=""/>
+            </div>
             <p>A elem  entur and imperdiet enim, pretium etiam facilisi aenean quam mauris.</p>
         </div>
     </div>    
