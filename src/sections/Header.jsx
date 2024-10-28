@@ -1,8 +1,12 @@
 import React from 'react'
-import NavBar from './NavBar'
-import MobileButton from './MobileButton'
 import LogoType from '../assets/images/mainlogo.svg'
 import UserIcon from '../assets/images/icon-singIn_button.svg'
+
+import { Link } from 'react-router-dom'
+
+import NavBar from './NavBar'
+import MobileButton from './MobileButton'
+import DarkModeSwitch from './DarkModeSwitch'
 
 const Header = () => {
   return (
@@ -10,7 +14,7 @@ const Header = () => {
 
         <div className="header-left">
 
-            <a href="index.html"><img src={LogoType} alt="logo silicon"/></a>
+            <Link to="/"><img src={LogoType} alt="logo silicon"/></Link>
                 
             <NavBar/>
 
@@ -18,18 +22,12 @@ const Header = () => {
 
         <div className="header-right">
 
-            <div className="mode-toggle">
-                <span className="label">Dark mode</span>
-                <label for="darkmode-toggle" id="darkmode-switch" className="switch" aria-label ="darkmode switch">   
-                    <input id="darkmode-toggle" type="checkbox"/>
-                    <span className="slider round"></span>
-                </label>
-            </div>
+            <DarkModeSwitch/>
 
-            <a className="btn-primary">
+            <Link className="btn-primary" to="/">
                 <img className="icon-btn-primary" src={UserIcon} alt="icon person"/>
                 <p>Sign in / up</p>
-            </a>
+            </Link>
 
             <MobileButton/>
 

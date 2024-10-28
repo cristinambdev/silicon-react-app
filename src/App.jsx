@@ -1,35 +1,35 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
-import Brands from './sections/Brands'
-import Caroussel from './sections/Caroussel'
-import Faqs from './sections/Faqs'
-import Features from './sections/Features'
-import Footer from './sections/Footer'
+import Home from './views/Home'
+import Contact from './views/Contact'
+
 import Header from './sections/Header'
-import Hero from './sections/Hero'
-import Subscription from './sections/Subscription'
-import Testimonials from './sections/Testimonials'
-import Transfers from './sections/Transfers'
+import Footer from './sections/Footer'
 
-function App() {
 
+export const App = () => {
   return (
-    <>
-    <div className="wrapper">
+    <BrowserRouter>
+    
+      <div className="wrapper" data-theme="light">
+    
         <Header/>
+
         <main>
-          <Hero/>
-          <Brands/>
-          <Features/>
-          <Caroussel/>
-          <Transfers/>
-          <Testimonials/>
-          <Faqs/>
-          <Subscription/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact/>} />
+          </Routes>
         </main>
+
         <Footer/>
+    
       </div>
-    </>
+    
+    </BrowserRouter>
+
   )
 }
 
 export default App
+

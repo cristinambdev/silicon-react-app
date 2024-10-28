@@ -1,18 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-:root {
-  font-family: "Manrope", sans-serif;;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light;
-  color: black;
-
+:root[data-theme ="light"] {
+  
 --color-primary:#6366F1;
 --color-dark:#0B0F19;
 --color-gray:#9397AD;
 --color-white:#FFFFFF;
 --color-bold: #131022;
---color-text: #585C7B;
 --color-nav-text: #33354D;
 --color-text: #565973;
 --color-border-gray: #E2E5F1;
@@ -22,11 +16,7 @@
 --color-input: #B4B7C9;
 }
 
-/* .dark {
-
-  // color-scheme: dark;
-  
-  
+:root[data-theme ="dark"] {
 --color-white:#0B0F19;
 --color-background-hero:#0B0F19;
 --color-bg2: rgba (255, 255, 255, 0.04);
@@ -36,12 +26,9 @@
 --color-dark: #FFFFFF;
 --color-input: #FFFFFF;
 --color-logo-bg: rgba (99, 101, 241, 0.08);
-  
-  
-  .show-light {display:none;}
-  .show-dark {display:block;}
-  
-  } */
+
+}  
+
 
 *, *::before, *::after {
   margin: 0;
@@ -50,7 +37,9 @@
 }
 
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif;;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 
@@ -60,7 +49,7 @@ li {
 
 /* BOX STYLE*/
 logo-box, .brand-box {
-  border: 1px solid #E2E5F1;
+  border: 1px solid var(--color-border-gray);
   border-radius: 8px;
   height: 100px;
   width: 200px;
@@ -70,14 +59,14 @@ logo-box, .brand-box {
 }
 
 contact-box, .faqs .container .contact-area .contact-box {
-  border: 0.5px solid #E2E5F1;
+  border: 0.5px solid var(--color-border-gray);
   padding: 1.5rem;
   border-radius: 8px;
   height: 12rem;
 }
 
 .features-icon {
-  background-color: #F3F6FF;
+  background-color: var(--color-bg2);
   padding: 1rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
@@ -89,8 +78,8 @@ contact-box, .faqs .container .contact-area .contact-box {
 
 /* BUTTONS*/
 .btn-primary {
-  background-color: #6366F1;
-  color: #FFFFFF;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   padding: 0.5rem 1.2rem;
   border-radius: 8px;
   border-style: none;
@@ -99,7 +88,7 @@ contact-box, .faqs .container .contact-area .contact-box {
   display: none;
 }
 .btn-primary:hover {
-  background-color: #9397AD;
+  background-color: var(--color-gray);
 }
 
 .mobile-btn {
@@ -113,8 +102,8 @@ contact-box, .faqs .container .contact-area .contact-box {
   gap: 1rem;
 }
 .market-buttons .btn-app {
-  background-color: #0B0F19;
-  color: #FFFFFF;
+  background-color: var(--color-dark);
+  color: var(--color-white);
   padding: 0.8rem;
   border-radius: 8px;
   cursor: pointer;
@@ -123,11 +112,12 @@ contact-box, .faqs .container .contact-area .contact-box {
   align-items: center;
 }
 .market-buttons .btn-app:hover {
-  background-color: #6366F1;
-  color: #FFFFFF;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
+
 .btn-round {
-  background-color: #F3F6FF;
+  background-color: var(--color-bg2);;
   border: none;
   width: 2.4rem;
   aspect-ratio: 1;
@@ -139,7 +129,7 @@ contact-box, .faqs .container .contact-area .contact-box {
 }
 
 .btn-round:hover {
-  background-color: #E2E5F1;
+  background-color: var(--color-border-gray);
 }
 
 @media (min-width: 768px) {
@@ -203,7 +193,7 @@ contact-box, .faqs .container .contact-area .contact-box {
 
 
 /* SWITCH BUTTON */
-.mode-toggle {
+.darkModeSwitch {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,11 +205,8 @@ contact-box, .faqs .container .contact-area .contact-box {
 }
 
 @media (min-width: 768px) {
-  .mode-toggle {
-    margin-right: 2rem;
-  }
-  .mode-toggle .label {
-    display: flex;
+  .label {
+    display: block;
   }
 }
 
@@ -254,16 +241,16 @@ contact-box, .faqs .container .contact-area .contact-box {
   width: 20px;
   left: 2px;
   bottom: 3px;
-  background-color: #FFFFFF;
+  background-color: var(--color-white);
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #6366F1;
+  background-color: var(--color-primary);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #6366F1;
+  box-shadow: 0 0 1px var(--color-primary);
 }
 
 input:checked + .slider:before {
@@ -306,12 +293,12 @@ header.container {
 .nav-link {
   font-size: 1rem;
   font-weight: 600;
-  color: #0B0F19;
+  color: var(--color-dark);
   text-decoration: none;
   display: none;
 }
 .nav-link:hover {
-  color: #6366F1;
+  color: var(--color-primary);
 }
 
 @media (min-width: 1400px) {
@@ -337,7 +324,7 @@ header.container {
 }
 .hero .headline h1 {
   font-size: 2.1rem;
-  color: #0B0F19;
+  color: var(--color-dark);
   font-weight: 800;
   padding-bottom: 2rem;
 }
@@ -347,13 +334,13 @@ header.container {
 }
 .hero .content p {
   font-size: 1.25rem;
-  color: #565973;
+  color: var(--color-text);
   font-weight: 400;
   padding-bottom: 2.5rem;
 }
 
 .discover-more {
-  color: #0B0F19;
+  color: var(--color-dark);
   gap: 0.7rem;
   text-decoration: none;
   margin-top: 2rem;
@@ -373,7 +360,7 @@ header.container {
   }
   .hero .container h1 {
     font-size: 2.6rem;
-    color: #0B0F19;
+    color: var(--color-dark);
     font-weight: 800;
   }
   .hero .container h1 span {
@@ -385,6 +372,7 @@ header.container {
   .hero .content p {
     padding-top: 2rem;
     padding-right: 2rem;
+    color: var(--color-text);
   }
   .hero .content p span {
     display: block;
@@ -408,7 +396,7 @@ header.container {
     text-align: left;
     padding-bottom: 0;
     font-size: 3.5rem;
-    color: #0B0F19;
+    color: var(--color-dark);
     font-weight: 800;
   }
 
@@ -496,13 +484,13 @@ header.container {
 }
 .app-features .container .heading h2 {
   font-size: 1.75rem;
-  color: #0B0F19;
+  color: var(--color-dark);
   font-weight: 800;
   margin-bottom: 1rem;
 }
 .app-features .container .heading p {
   font-size: 1.125rem;
-  color: #565973;
+  color: var(--color-text);
   font-weight: 400;
   line-height: 1.8rem;
 }
@@ -516,14 +504,14 @@ header.container {
 }
 .app-features .container .features h5 {
   font-size: 1.6rem;
-  color: #0B0F19;
+  color: var(--color-dark);
   font-weight: 800;
   margin-top: 0.3rem;
   margin-bottom: 0.5rem;
 }
 .app-features .container .features p {
   font-size: 1rem;
-  color: #565973;
+  color: var(--color-text);
   font-weight: 400;
   line-height: 1.6rem;
 }
@@ -539,7 +527,7 @@ header.container {
 @media (min-width: 768px) {
   .app-features .container .heading h2 {
     font-size: 2.1rem;
-    color: #0B0F19;
+    color: var(--color-dark);
     font-weight: 800;
   }
   .app-features .container .items {
@@ -562,19 +550,19 @@ header.container {
 
 /* CAROUSSEL */
 .caroussel {
-  background: #F3F6FF;
+  background: var(--color-bg2);
   text-align: center;
   justify-content: center;
   padding-block: 1.5rem;
 }
 .caroussel h2 {
   font-size: 1.75rem;
-  color: #0B0F19;
+  color: var(--color-dark);
   font-weight: 800;
 }
 .caroussel h4 {
   font-size: 1.4rem;
-  color: #0B0F19;
+  color: var(--color-dark);
   font-weight: 800;
   padding-inline: 2rem;
   padding-block: 1rem;
@@ -582,7 +570,7 @@ header.container {
 
 .caroussel p {
   font-size: 1rem;
-  color: #565973;
+  color: var(--color-text);
   font-weight: 400;
   text-align: center;
   line-height: 1.6rem;
@@ -662,12 +650,12 @@ header.container {
 }
 .transfers .container h3 {
   font-size: 2.1rem;
-  color: #0B0F19;
+  color: var(--color-dark);
   font-weight: 800;
 }
 .transfers .container p {
   font-size: 1rem;
-  color: #565973;
+  color: var(--color-text);
   font-weight: 400;
   line-height: 1.5rem;
 }
@@ -736,7 +724,7 @@ header.container {
 
 /* TESTIMONIALS*/
 .reviews {
-  background: #F3F6FF;
+  background: var(--color-bg2);
   display: none;
 }
 
@@ -751,25 +739,25 @@ header.container {
 }
 .reviews .container .heading h2 {
   font-size: 2.6rem;
-  color: #0B0F19;
+  color: var(--color-dark);
   font-weight: 800;
 }
 .reviews .container .comment {
   font-size: 1.125rem;
-  color: #565973;
+  color: var(--color-text);
   font-weight: 400;
   line-height: 1.8rem;
 }
 .reviews .container .reviewer-job {
   font-size: 0.9rem;
-  color: #565973;
+  color: var(--color-text);
   font-weight: 400;
 }
 .reviews .container .review-box {
   padding: 1.5rem;
   position: relative;
   z-index: 0;
-  background-color: #FFFFFF;
+  background-color: var(--color-white);
   box-shadow: 0 5px 10px rgba(77, 74, 74, 0.1882352941);
   width: 35%;
   border-radius: 8px;
@@ -811,13 +799,13 @@ header.container {
 }
 .faqs .container .heading h2 {
   font-size: 1.6rem;
-  color: #0B0F19;
+  color: var(--color-dark);
   font-weight: 800;
   padding-inline: 1.5rem ;
 }
 .faqs .container .heading p {
   font-size: 1.125rem;
-  color: #0B0F19;
+  color: var(--color-dark);
   font-weight: 400;
   padding-block: 1rem;
 }
@@ -826,7 +814,7 @@ header.container {
   grid-area: faqs-accordion;
 }
 .faqs .container .faqs-accordion .accordion-item {
-  border: 0.5px solid #E2E5F1;
+  border: 0.5px solid var(--color-border-gray);
   border-radius: 8px;
   padding: 1rem;
   align-items: center;
@@ -837,13 +825,13 @@ header.container {
   align-items: center;
   justify-content: space-between;
   font-size: 1rem;
-  color: #131022;
+  color: var(--color-dark);
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
 .faqs .container .faqs-accordion .btn-round {
-  background-color: #F3F6FF;
+  background-color: var(--color-bg2);
   border: none;
   width: 2.4rem;
   aspect-ratio: 1;
@@ -854,11 +842,11 @@ header.container {
   transition: all 300ms;
 }
 .faqs .container .faqs-accordion .question:hover .btn-round {
-  background-color: #E2E5F1;
+  background-color: var(--color-border-gray);
 }
 .faqs .container .faqs-accordion .answer {
   font-size: 0.9rem;
-  color: #565973;
+  color: var(--color-text);
   font-weight: 400;
   line-height: 1.5rem;
   display: grid;
@@ -872,9 +860,9 @@ header.container {
   padding-block: 0.7rem;
 }
 .faqs .container .faqs-accordion .open .btn-round {
-  background-color: #6366F1;
+  background-color: var(--color-primary);
   rotate: 180deg;
-  color: #FFFFFF;
+  color: var(--color-white);
 }
 .faqs .container .faqs-accordion .expandable {
   min-height: 0px;
@@ -907,10 +895,10 @@ header.container {
   gap: 1rem;
 }
 .faqs .container .contact-area .contact-box .contact-phone {
-  color: #6366F1;
+  color: var(--color-primary);
 }
 .faqs .container .contact-area .contact-box .contact-chat {
-  color: #22C55E;
+  color: var(--color-success);
 }
 
 @media (min-width: 768px) {
@@ -920,7 +908,7 @@ header.container {
   
   .faqs .container .heading h2 {
     font-size: 2.1rem;
-    color: #0B0F19;
+    color: var(--color-dark);
     font-weight: 800;
 
   }
@@ -930,14 +918,14 @@ header.container {
 
   .faqs .container .heading p {
     font-size: 1.125rem;
-    color: #565973;
+    color: var(--color-text);
     font-weight: 400;
     width: 60%;
     margin: 0 auto;
   }
 
   .faqs .container .faqs-accordion .accordion-item {
-    border: 0.5px solid #E2E5F1;
+    border: 0.5px solid var(--color-border-gray);
     box-shadow: 0 5px 10px rgba(188, 187, 187, 0.1882352941);
     margin-bottom: 1rem;
   }
@@ -988,7 +976,7 @@ header.container {
 
 /* SUBSCRIPTION*/
 .subscription-wrapper {
-  background-color: #F3F6FF;
+  background-color: var(--color-bg2);
   border-radius: 8px;
   display: grid;
   justify-items: center;
@@ -1007,7 +995,7 @@ header.container {
 }
 .subscription-wrapper .subscription-heading h4 {
   font-size: 1.125rem;
-  color: #0B0F19;
+  color: var(--color-dark);
   font-weight: 800;
   padding-top: 0.5rem;
 }
@@ -1021,12 +1009,12 @@ header.container {
   left: 2rem;
 }
 .subscription-wrapper .subscription-email-input .email-input {
-  border: 0.5px solid #E2E5F1;
+  border: 0.5px solid var(--color-bg2);
   padding-left: 2.5rem;
   border-radius: 0.5em 0 0 0.5em;
   background-position: 10px 50%;
   font-size: 1rem;
-  color: #B4B7C9;
+  color: var(--color-input);
   font-weight: 400;
 }
 .subscription-wrapper .subscription-email-input .btn-primary {
@@ -1066,7 +1054,7 @@ header.container {
   }
   .subscription-wrapper .subscription-heading h4 {
     font-size: 1.6rem;
-    color: #0B0F19;
+    color: var(--color-dark);
     font-weight: 800;
     padding-top: 1rem;
   }
@@ -1074,22 +1062,24 @@ header.container {
 
 /* FOOTER*/
 footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-block: 1rem;
+  text-align: center;
   font-size: 0.9rem;
-  color: #565973;
+  color: var(--color-text);
   font-weight: 400;
 }
-footer.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-}
+
 footer .credit {
   display: none;
 }
 @media (min-width: 768px) {
+  
+  footer .container {
+    display: flex;
+    gap: .4rem;
+    justify-content: center;
+  }
+
   footer .credit {
     display: block;
   }
@@ -1097,94 +1087,167 @@ footer .credit {
 
 
 /* CONTACT PAGE*/
-.header {
+.contact-page {
+  background: var(--color-bg2);
+  padding-top: 2rem;
+}
+
+.contact-page .header {
+  border: 1px solid red;
+  grid-area: header;
   margin: 2rem auto;
   text-align: left;
   justify-content: center;
-}
-.header h2 {
-  font-size: 2.1rem;
-  color: #0B0F19;
-  font-weight: 800;
-}
-.header p {
-  margin-top: 1em;
-  font-size: 1.25rem;
-  color: #565973;
-  font-weight: 400;
-  line-height: 1.8rem;
+  height: 6rem;
+
+  h1 {
+    font-size: 2.6rem;
+    color: $color-dark;
+    font-weight: 800;
+  }
+
 }
 
+.btn-round {
+  background-color: #fff;
+  border: none;
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: var(--color-primary);
+
+  transition: all  300ms;
+
+  &:hover {
+      background-color: var(--color-border-gray);
+      color: black;
+    }
+
+}
+.contact-icon {
+  color: var(--color-primary);
+
+
+}
+
+.contact-links {
+  grid-area: contact-links;
+  border: 1px solid green;
+
+  .email,
+  .careers {
+      gap: 1rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+  }
+
+}
+
+.reg-form {
+  grid-area: form;
+  background-color: #fff;
+  border-radius: .5rem;
+  padding: 3rem;
+
+
+}
 .form-label {
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: .4rem;
+
 }
 
 .form-input {
   width: 100%;
   font-size: 1rem;
-  padding: 0.8rem;
+  padding: .8rem;
   margin-bottom: 1.5rem;
-  border: 0.1rem solid #E2E5F1;
+  border: .1rem solid #E2E5F1;
   border-radius: 8px;
   font: inherit;
 }
 
-.input-group:has(input:required, textarea:required) label::after {
-  content: " *";
+
+.input-group:has(input:required, textarea:required) label::after{
+  content: ' *';
   color: #EF4444;
 }
+
 
 .form-check {
   margin-top: 1rem;
 }
 
+
 .submitBtn {
   display: flex;
   font-size: 1.2rem;
   margin-top: 2rem;
-  margin: 3rem auto;
+  margin:3rem auto;
   padding: 1rem 2rem;
 }
 
 .invalid-input {
   color: #EF4444;
-  font-size: 0.9rem;
+  font-size: .9rem;
   display: none;
 }
 
-.error .form-input {
-  border-color: #EF4444;
-}
-.error .invalid-input {
-  display: block;
+.error {
+
+  .form-input {
+      border-color: #EF4444;
+  }
+
+  .invalid-input {
+      display: block;
+  }
+
 }
 
 @media (min-width: 768px) {
-  .contact .container .header {
-    text-align: center;
-    width: 60%;
+
+.contact .container {
+
+      .header {
+          text-align: center;
+          width: 60%;
+      }
+
+      form {
+          .userName,
+          .userContact {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1.5rem;
+          }
+          
+          .submitBtn {
+              margin-left: 0;
+          }
+      }
   }
-  .contact .container form .userName,
-  .contact .container form .userContact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-  .contact .container form .submitBtn {
-    margin-left: 0;
-  }
+
 }
+
 @media (min-width: 1400px) {
-  .contact .container {
-    display: flex;
-    gap: 3rem;
+  .contact-page .container{
+  display: grid;
+  gap: 0;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "header form"
+                       "contact-links form";
+      }
+
   }
-  .contact .container .header {
-    text-align: left;
+
+  .location .container {
+  display: flex;
   }
-  .contact .container form {
-    margin-top: 2rem;
-    width: 80%;
-  }
-}

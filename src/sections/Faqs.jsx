@@ -2,6 +2,7 @@ import React from 'react'
 import { Accordion } from './Accordion'
 import PhoneIcon from '../assets/images/icon_phone.svg'
 import ChatIcon from '../assets/images/icon_chat.svg'
+import { Link, NavLink } from 'react-router-dom'
 
 
 
@@ -144,10 +145,10 @@ function Faqs() {
             <div className="contact-box">
                 <img src={PhoneIcon} alt=""/>
                 <p className="small-text">Still have questions?</p>
-                <a href="contact.html" className="contact-phone">
+                <NavLink to="/contact" className="contact-phone">
                     Contact us 
                     <i className="fa-solid fa-arrow-right"></i>
-                            </a>
+                            </NavLink>
             </div>
     
             <div className="contact-box ">
@@ -160,7 +161,7 @@ function Faqs() {
             </div>
 
 
-                    <a href="contact.html" className="btn-primary">Contact us now</a>
+                    <Link to="/contact" className="btn-primary">Contact us now</Link>
                
             </div>
     
