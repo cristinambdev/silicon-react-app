@@ -33,9 +33,9 @@ const DarkModeSwitch = () => {
     }, [])
 
   return (
-    <div class="darkModeSwitch">
+    <div className="darkModeSwitch">
         <span className="label">Dark mode</span>
-          <label for="darkmode-toggle"  className="switch"  type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} aria-label ="darkmode switch">  
+          <label htmlFor="darkmode-toggle"  className="switch"  type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} aria-label ="darkmode switch">  
               <input id="darkmode-toggle" />
               <span className="slider round"></span>
           </label>

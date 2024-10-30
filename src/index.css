@@ -935,7 +935,8 @@ header.container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     row-gap: 3rem;
-    grid-template-areas: "contact-box-phone contact-box-chat" "btn-primary btn-primary";
+    grid-template-areas: "contact-box-phone contact-box-chat"
+                         "btn-primary btn-primary";
     justify-content: center;
   }
   .faqs .container .contact-area .contact-box {
@@ -946,6 +947,7 @@ header.container {
     grid-area: btn-primary;
   }
 }
+
 @media (min-width: 1400px) {
   .faqs .container {
     margin-top: 6rem;
@@ -1086,38 +1088,103 @@ footer .credit {
 }
 
 
+/* BREADCRUMB */
+
+.page-title .container {
+
+  .breadcrumb {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.2rem;
+    text-transform: capitalize;
+    color: var(--color-primary);
+    font-size: .8rem;
+
+    Link {
+    color: #9397AD;
+    text-decoration: none;
+    }
+  }
+  }
+
+
+
+
 /* CONTACT PAGE*/
 .contact-page {
   background: var(--color-bg2);
   padding-top: 2rem;
 }
 
-.contact-page .header {
-  border: 1px solid red;
-  grid-area: header;
-  margin: 2rem auto;
-  text-align: left;
-  justify-content: center;
-  height: 6rem;
+.contact-page .container {
+  margin-block: 2rem;
+  position: relative;
+  display: grid;
+  grid-template-columns:  1fr;
+  grid-template-areas: "header"
+                        "form"
+                       "contact-links";
+}
 
-  h1 {
-    font-size: 2.6rem;
-    color: $color-dark;
-    font-weight: 800;
+.contact-page .header {
+  grid-area: header;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--color-dark);
+  font-weight: 800;
+  margin-bottom: 1rem;
+
+}
+
+.contact-links {
+  grid-area: contact-links;
+  margin-block: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem; 
+  
+
+
+  .contact-item {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: var(--color-white);
+    display: flex;
+    gap: 1rem; 
+
+      h4 {
+      font-weight: 900;
+      margin-bottom: .7rem;;
+    }
+
+    .email-link,
+    .application-link {
+      color: var(--color-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding-block: 1rem;
+      gap: 1rem;
+    }
+
+    .fa-envelope, 
+    .fa-user-plus {
+      color: var(--color-primary);
+      padding-top: .3rem; 
+    }
   }
 
 }
 
 .btn-round {
-  background-color: #fff;
+  display: none;
   border: none;
-  width: 3rem;
   aspect-ratio: 1;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
   cursor: pointer;
-  color: var(--color-primary);
 
   transition: all  300ms;
 
@@ -1127,35 +1194,18 @@ footer .credit {
     }
 
 }
-.contact-icon {
-  color: var(--color-primary);
-
-
-}
-
-.contact-links {
-  grid-area: contact-links;
-  border: 1px solid green;
-
-  .email,
-  .careers {
-      gap: 1rem;
-      margin-bottom: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 70%;
-  }
-
-}
 
 .reg-form {
+
+  h1 {
+    margin-bottom: 1rem;
+  }
   grid-area: form;
   background-color: #fff;
   border-radius: .5rem;
   padding: 3rem;
-
-
+  position: relative;
+  display: block;
 }
 .form-label {
   display: block;
@@ -1184,12 +1234,11 @@ footer .credit {
   margin-top: 1rem;
 }
 
-
 .submitBtn {
   display: flex;
   font-size: 1.2rem;
   margin-top: 2rem;
-  margin:3rem auto;
+  margin:2rem auto;
   padding: 1rem 2rem;
 }
 
@@ -1213,12 +1262,7 @@ footer .credit {
 
 @media (min-width: 768px) {
 
-.contact .container {
-
-      .header {
-          text-align: center;
-          width: 60%;
-      }
+.contact-page .container {
 
       form {
           .userName,
@@ -1238,16 +1282,156 @@ footer .credit {
 
 @media (min-width: 1400px) {
   .contact-page .container{
-  display: grid;
-  gap: 0;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "header form"
-                       "contact-links form";
+    margin-top: 0;
+    gap: 1rem;
+    padding-bottom: 5rem;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header form"
+                        "contact-links form";
+
+    
+    h1 {
+      text-align: left;
+    }
+
+    form {
+      position: absolute;
+      padding-bottom: 0;
+      z-index: 1;
+      width: 750px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .contact-links {
+      display: inline;
+      width: 60%;
+      margin-top: 0;
+      
+        .contact-item {
+          background-color: transparent;
+        }
+      
+    }
+  }
+}
+    
+
+    /*LOCATION*/
+
+    .location .container {
+
+      position: relative;
+      padding-bottom: 2rem;
+      
+      .addresses {
+        width: 100%;
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .location-1,
+        .location-2 {
+          margin-bottom: 3rem;
+          justify-content: center;
+          align-items: center;
+          
+
+          h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 900;
+          }
+
+        
+        }
+
+        .address,
+        .phone {
+          display: flex;
+          align-items: center;
+          gap: .7rem;
+          padding-bottom: .7rem;
+
+        }
+
+        .opening-times {
+          display: flex;
+          flex-direction: column;
+
+          .weekdays,
+          .weekend-days {
+            font-weight: 900;
+          }
+
+          .weekend-days {
+            padding-left: 1.5rem;
+          }
+
+          p {
+            margin: 0;
+          }
+
+        }
+
+        .weekday-hours  {
+          display: flex;
+          align-items: center;
+          gap: .5rem;
+
+      }
+        
       }
 
-  }
 
-  .location .container {
-  display: flex;
-  }
+      .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+
+      .features-icon {
+          padding: .6rem .8rem;
+
+      }
+    }
+    }
+
+
+    @media (min-width: 1400px) {
+
+      .location .container {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: "map addresses"
+                              "map social-icons";
+
+      .map {
+        grid-area: map;
+        margin-top: 1rem;
+      }
+      .addresses {
+        grid-area: addresses;
+        display: flex;
+        flex-direction: column;
+      }
+      .social-icons {
+        grid-area: social-icons;
+        justify-content: flex-start;
+      }
+
+          
+      
+  
+      }
+
+    }
+
+
+    
+    
+    
+    
+
+

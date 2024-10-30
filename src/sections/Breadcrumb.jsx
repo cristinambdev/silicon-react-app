@@ -10,9 +10,18 @@ const Breadcrumb = () => {
     <section className="page-title">
       <div className="container">
 
-        <h1>{pathnames[pathnames.length - 1]?.replace(/-/g, ' ') || 'Home' }</h1>
+        {/* <h1>{pathnames[pathnames.length - 1]?.replace(/-/g, ' ') || 'Home' }</h1> */}
         <ul className="breadcrumb">
-          <li><Link to="/">Home</Link></li>
+        
+          <li>
+            <Link to="/">
+            <i className="fa-solid fa-house" style={{color: '#9397AD'}}></i> homepage
+            </Link>
+          </li>
+
+          <li><i className="fa-solid fa-angles-right" style={{color: '#6366F1'}}></i></li>
+
+          
           {
             pathnames.map((value, index) => {
               const to = `/${pathnames.slice(0, index + 1).join('/')}`;
@@ -23,12 +32,11 @@ const Breadcrumb = () => {
                   ? (<span>{value.replace(/-/g, ' ')}</span>)
                   : (<Link to={to}>{value.replace(/-/g, ' ')}</Link>)
                   }
-
-
                 </li>
               );
             })
           }
+          
         </ul>
       </div>
 
